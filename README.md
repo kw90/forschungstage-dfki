@@ -83,21 +83,20 @@ Ziel wäre es nun, dass ihr alleine oder in Gruppen (je nach interesse) (zusamme
 	+ Schau dir die Bedingungsregeln in `TicTacToeAiHeuristic.py` an und
 		+ gibt es momentan eine Reihe von Zügen womit du Pepper jedes mal besiegst?
 		+ überlege dir was daran verbessert werden könnte
+		+ sieh dir auch `TicTacToeAiRand.py` an als alternative Spielstrategie die einfach einen zufälligen Zug zurückgibt
 		+ suche nach alternativen Spiel-Strategien
 		[//]: # (TODO: Einfaches RL? ML? DL?)
 
 + Die Bildverarbeitung verbessern
 	+ Studiere die CV Pipeline in `DetectBoard.py` und
 		+ versuche die Bilderkennung in verschiedenem Licht aus
-			+ mithilfe des `DetectBoard.py` kannst du das Resultat nach jedem Schritt
-				der Pipeline in einem Bild sehen
+			+ mithilfe des `DetectBoard.py` kannst du das Resultat nach jedem Schritt der Pipeline in einem Bild sehen
 			+ welche Schritte werden dabei in welcher Reihenfolge ausgeführt?
 			+ spiele mit den Parametern und finde andere (allenfalls bessere) Lösungen
 			+ gibt's alternative und/oder bessere Lösungsmöglichkeiten?
 
 + Andere/Mehr Behaviors und Animationen
-	+ Momentan reagiert Pepper nur auf falsche Züge, wenn man versucht zu Cheaten
-		oder wenn ein Spiel zu ende ist.
+	+ Momentan reagiert Pepper nur auf falsche Züge, wenn man versucht zu Cheaten oder wenn ein Spiel zu ende ist
 		+ Diese Reaktionen können verändert werden oder
 		+ es können neue hinzugefügt werden, bspw.
 			+ dass Pepper den Spieler nach 10 Sekunden stichelt
@@ -105,6 +104,7 @@ Ziel wäre es nun, dass ihr alleine oder in Gruppen (je nach interesse) (zusamme
 			+ wenn ein guter/schlechter Zug gemacht wurde
 				+ _\#IstDasDeinErnst_ _\#MindGames_
 			+ eigene Ideen
+		+ Denkbar wäre auch ein Erkennen was nicht in Ordnung ist und kommunikation zur Behebung an Spieler
 
 + Eigene Idee(n) einbringen :smiley:
 
