@@ -113,8 +113,62 @@ Ziel wäre es nun, dass ihr alleine oder in Gruppen (je nach interesse) (zusamme
 	Ubuntu Linux 18.04
 		+ Python 2.7
 		+ OpenCV 3.4
-		+ NaoQi 2.5
-		+ Entwicklungsumgebung PyCharm 2019.2
+		+ Entwicklungsumgebung PyCharm 2019.1.3
+		+ NAOqi 2.5.10
+
+
+### Verbindung mit dem WLAN (Verbindung zu Pepper, kein Internet - für Internet siehe Whiteboard):
+
+__Netzwerkname__: `linksys`
+
+
+## Wie weiter
+
+1) Einteilung in Gruppen
+2) Jede Gruppe arbeitet klont sich das Git Repository unter https://github.com/kw90/forschungstage-dfki
+3) Fragen ist willkommen :)
+
+
+### Git Repository klonen, Step-by-Step-Anleitung
+
+0) Virtuelle Maschine in VirtualBox importieren und starten
+1) Terminal öffnen (`Ctrl+Alt+t`)
+2) Ausführen `mkdir source && cd source`
+3) PyCharm starten (Shortcut in linker Taskleiste)
+4) Im PyCharm-Menü nach Start: Auf `Check out from Version Control` > `Git` klicken
+5) Im sich darauf öffnenden Fenster: URL = `https://github.com/kw90/naoqi-opencv-tictactoe.git`, Directory = `/home/masc29/source`
+6) Auf `Clone` klicken
+7) Im Terminal `cd TicTacToe` ausführen
+8) Test ausführen anhand `python Main.py`
+9) Das Hauptprogramm sollte starten und folgender Output sollte in der Konsole angezeigt werden
+```bash
+arms collison protection: True
+external collison protection: True
+speech configuration done
+CONNECTED
+   0   0   0
+   0   0   0
+   0   0   0
+speech configuration done
+Say ´lets play´ or press enter to start a game.
+```
+
+Damit seid ihr ready zum Weiterentwickeln. Damit ihr wisst welche Datei für welche Aufgabe zuständig ist - und somit wo Änderungen gemacht werden müssen wenn ihr etwas hinzufügen wollt - findet ihr im nächsten Kapitel eine Aufteilung.
+
+## Was macht was und was ist wofür zuständig
+
++ `Main.py`
+	+ Ist das Startup File für das Hauptprogramm
+	+ Damit werden alle Komponenten gestartet
++ `DetectBoard.py`
+	+ Ist die Datei die den Hauptsächlichen Bildverarbeitungscode beinhaltet
+		+ Im Ordner image_processing befinden sich zudem noch 3 weitere Hilfsdateien mit Hilfsfunktionen die von `DetectBoard.py` aufgerufen werden
++ `TicTacToe.py`
+	+ Darin wird die gesamte Spiellogik abgewickelt
+	+ `TicTacToeAiHeuristic.py`
+		+ Darin befindet sich die Spiellogik bestehend aus klar vordefinierten Bedingungsregeln
+	+ Als Alternative zeigt `TicTacToeAiRand.py` eine rein zufällige Spielstrategie
+
 
 
 
