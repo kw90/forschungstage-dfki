@@ -119,7 +119,7 @@ Ziel wäre es nun, dass ihr alleine oder in Gruppen (je nach interesse) (zusamme
 
 ### Verbindung mit dem WLAN (Verbindung zu Pepper, kein Internet - für Internet siehe Whiteboard):
 
-__Netzwerkname__: `linksys`
+__SSID__: `linksys`
 
 
 ## Wie weiter
@@ -163,6 +163,10 @@ Damit seid ihr ready zum Weiterentwickeln. Damit ihr wisst welche Datei für wel
 + `DetectBoard.py`
 	+ Ist die Datei die den Hauptsächlichen Bildverarbeitungscode beinhaltet
 		+ Im Ordner image_processing befinden sich zudem noch 3 weitere Hilfsdateien mit Hilfsfunktionen die von `DetectBoard.py` aufgerufen werden
+	+ Hierin wird in regelmäßigen Abständen ein Bild von Peppers Front-Kamera geschossen
+	+ Das Bild wird in eurer VM unter `/home/masc29/source/TicTacToe/pictures` abgespeichert und daraufhin analysiert
+	+ In der Analyse werden Linien auf dem Spielfeld und Kanten der Spielsteine erkannt
+	+ Die Farbe eines erkannten Spielsteins wird anhand von Schwellwerten für die Farben Rot und Blau erkannt
 + `TicTacToe.py`
 	+ Darin wird die gesamte Spiellogik abgewickelt
 	+ `TicTacToeAiHeuristic.py`
