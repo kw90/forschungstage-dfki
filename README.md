@@ -13,12 +13,6 @@ Virtuellen Maschine und ohne grossen Aufwand auf der Plattform ihrer Wahl
 programmieren und auf Pepper testen.
 
 
-## Das DFKI
-- see PPT Industry_4_0_talk-2018.pptx: https://cloud.dfki.de/owncloud/index.php/f/53550344
-- momentan macht jeder KI
-	- gibts über 30 jahre $`\Rightarrow`$ kein newcomer
-
-
 ## Geplantes Verhalten
 
 Es sollte eine Anwendung entwickelt werden, die es ermöglicht gegen Pepper Tic Tac Toe zu spielen. Um ein Spiel zu starten gibt man Pepper sprachlich einen Startbefehl. Danach fordert Pepper den Spieler auf seine Spielzüge zu spielen und wenn Pepper am Zug ist, zeigt er dem Spieler, wo er Peppers Spielstein platzieren soll. Wird ein unerlaubter oder falscher Spielzug erkannt, meldet Pepper dies und fordert den Spieler auf die auf dem Display angezeigte Spielsituation wiederherzustellen. Gewinnt einer der Spieler, verkündet Pepper den Gewinner und wartet auf einen neuen Spielstart, oder das beenden seines Verhaltens. 
@@ -72,6 +66,11 @@ Für die Spiellogik wird ein Utility-based Agent verwendet. Bei diesem kommt als
 Für jeden möglichen Spielzug wird dann mithilfe einer 
 Heuristik berechnet, wie gut dieser für den Agenten ist. Aus den getätigten Berechnungen wird dann die beste ausgewählt und der dazugehörige Spielzug getätigt. Mithilfe dieses Agenten wird sichergestellt, dass Pepper möglichst viele Spiele gewinnen kann.
 
+#### Heuristik
+Eine Art Vermutung, die auf der Grundlage bestimmter Annahmen getroffen werden.
+Damit können keine perfekten Ergebnisse garantiert werden aber ist schnell berechnet.
+
+
 ![Utility-based Agent](https://upload.wikimedia.org/wikipedia/commons/d/d8/Model_based_utility_based.png)
 
 Ziel wäre es nun, dass ihr alleine oder in Gruppen (je nach interesse) (zusammen)arbeitet und ein bisschen tüftelt.
@@ -87,7 +86,7 @@ Ziel wäre es nun, dass ihr alleine oder in Gruppen (je nach interesse) (zusamme
 		+ suche nach alternativen Spiel-Strategien
 		[//]: # (TODO: Einfaches RL? ML? DL?)
 
-+ Die Bildverarbeitung verbessern
++ Die Bildverarbeitung verstehen und damit experimentieren
 	+ Studiere die CV Pipeline in `DetectBoard.py` und
 		+ versuche die Bilderkennung in verschiedenem Licht aus
 			+ mithilfe des `DetectBoard.py` kannst du das Resultat nach jedem Schritt der Pipeline in einem Bild sehen
@@ -111,74 +110,11 @@ Ziel wäre es nun, dass ihr alleine oder in Gruppen (je nach interesse) (zusamme
 
 ## Eingesetzte externe Software
 
-	+ Python 2.7
-	+ OpenCV 3.4
-	+ Entwicklungsumgebung PyCharm
+	Ubuntu Linux 18.04
+		+ Python 2.7
+		+ OpenCV 3.4
+		+ NaoQi 2.5
+		+ Entwicklungsumgebung PyCharm 2019.2
 
 
-## Requirements
-
-Folgende Software muss vorher installiert werden:
-
-+ VirtualBox >= v6 (aktuellste Version v8.0.8 emfohlen)
-	1) Eine Installations-Anleitung für jegliche Betriebssysteme kann auf dem
-	[VirtualBox Wiki](https://www.virtualbox.org/wiki/Downloads) gefunden werden
-	2) Nach der Installation kann die von uns gelieferte `.ova` Datei in der
-	VirtualBox Anwendung über `Datei` $`\to`$ `Appliance
-	importieren` $`\to`$ Angabe genauer Pfad zur `.ova` Datei + `next` klicken <>> TODO add description for complete import
-
-
-### Verbindung mit dem WLAN:
-
-__SSID__: `PRAF`
-
-__KEY__: `poposoft`
-
-
-## Wie weiter
-
-1) Einteilung in Gruppen
-2) Jede Gruppe arbeitet in eigenem Git Repository unter [tictactoe-G[GRUPPE-NR]](https://gitlab.enterpriselab.ch/forschungstageAtdfki/group-repositories)
-3) Fragen ist willkommen :)
-
-
-### Beispiel anhand Gruppe 10
-
-1) Terminal öffnen (`Ctrl+Alt+t`)
-2) Ausführen `mkdir source && cd source`
-3) GitLab öffnen und navigieren zu https://gitlab.enterpriselab.ch/forschungstageAtdfki/group-repositories
-4) Klick auf Projekt mit zugehörigen Gruppen Nummer
-5) Kopieren `clone` mit `https` Adresse
-6) Ausführen im Terminal `git clone https://gitlab.enterpriselab.ch/forschungstageAtdfki/group-repositories/tictactoe-g10.git"
-7) Ausführen `cd tictactoe-G10` (eigene Gruppen Nummer einsetzen) 
-8) Test anhand ausführen `python Main.py`
-9) Das Hauptprogramm sollte starten und folgender Output sollte in der Konsole angezeigt werden
-```bash
-arms collison protection: True
-external collison protection: True
-speech configuration done
-CONNECTED
-   0   0   0
-   0   0   0
-   0   0   0
-speech configuration done
-Say ´lets play´ or press enter to start a game.
-```
-
-Damit seid ihr ready zum Weiterentwickeln. Damit ihr wisst welche Datei für welche Aufgabe zuständig ist - und somit wo Änderungen gemacht werden müssen wenn ihr etwas hinzufügen wollt - findet ihr im nächsten Kapitel eine Aufteilung.
-
-## Was macht was und was ist wofür zuständig
-
-+ `Main.py`
-	+ Ist das Startup File für das Hauptprogramm
-	+ Damit werden alle Komponenten gestartet
-+ `DetectBoard.py`
-	+ Ist die Datei die den Hauptsächlichen Bildverarbeitungscode beinhaltet
-		+ Im Ordner image_processing befinden sich zudem noch 3 weitere Hilfsdateien mit Hilfsfunktionen die von `DetectBoard.py` aufgerufen werden
-	+ TODO: Pipeline beschreiben
-+ `TicTacToe.py`
-	+ Darin wird die gesamte Spiellogik abgewickelt
-	+ `TicTacToeAiHeuristic.py`
-		+ Darin befindet sich die Spiellogik bestehend aus klar vordefinierten Bedingungsregeln
-		+ Als Alternative zeigt `TicTacToeAiRand.py` eine rein zufällige Spielstrategie
 
